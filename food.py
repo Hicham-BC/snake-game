@@ -1,8 +1,8 @@
 from turtle import Turtle
-from random import randint
+from random import randrange
 
 WIDTH, LENGTH = 0.4, 0.4
-START, END = -280, 280
+START, END, STEP = -280, 280, 10
 
 class Food(Turtle):
     def __init__(self):
@@ -13,6 +13,6 @@ class Food(Turtle):
         self.relocate()
 
     def relocate(self):
-        x_cor = randint(START, END)
-        y_cor = randint(START, END)
+        x_cor = randrange(START, END, STEP)
+        y_cor = randrange(START, END, STEP)
         self.goto(x=x_cor, y=y_cor)
